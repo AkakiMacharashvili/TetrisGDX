@@ -1,7 +1,7 @@
 package tetris;
 
 public interface ModelListener {
-	
-	void onChange(TetrisModel model);
-
+	void onChange(TetrisModel tetrisModel);
+	void over(TetrisModel tetrisModel);
 }
+

@@ -1,6 +1,4 @@
 buildscript {
-    
-
     repositories {
         mavenLocal()
         mavenCentral()
@@ -9,8 +7,7 @@ buildscript {
         google()
     }
     dependencies {
-        
-
+        // Add your dependencies here if needed
     }
 }
 
@@ -42,21 +39,28 @@ allprojects {
 project(":desktop") {
     apply plugin: "java-library"
 
-
     dependencies {
         implementation project(":core")
         api "com.badlogicgames.gdx:gdx-backend-lwjgl3:$gdxVersion"
         api "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
-        
     }
 }
 
 project(":core") {
     apply plugin: "java-library"
 
-
     dependencies {
         api "com.badlogicgames.gdx:gdx:$gdxVersion"
-        
+
+        // Add JUnit 5 dependencies for testing
+        testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.0'
+        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.0'
+
+        // If you are using Mockito for mocking (optional)
+        testImplementation 'org.mockito:mockito-core:5.5.0'
+    }
+
+    test {
+        useJUnitPlatform()
     }
 }

@@ -17,6 +17,11 @@ public class Controller implements ModelListener, GameEventsListener {
 	}
 
 	@Override
+	public void over(TetrisModel tetrisModel) {
+
+	}
+
+	@Override
 	public void slideDown() {
 		model.slideDown();
 	}
@@ -41,4 +46,15 @@ public class Controller implements ModelListener, GameEventsListener {
 		model.drop();
 	}
 
+	public void levelUp() {
+		model.levelUp();
+	}
+
+	public void levelDown() {
+		model.levelDown();
+	}
+
+	public void infinite(){
+		model.infinite();
+	}
 }
